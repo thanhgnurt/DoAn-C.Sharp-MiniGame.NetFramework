@@ -8,24 +8,7 @@ namespace DoAn_NMLT_20880106
     public class FappyBirdBird : FappyBird
     {
     public static  int skipBird = 10;
-        //------move down brid-------
-        public static void MoveDownBird()
-        {
-            while (true)
-            {
 
-                if (gameOver)
-                {
-                    return;
-                }   
-                if (!evenSpace && deleteShadow)
-                {
-                    Thread.Sleep(200);
-                    hightBird ++;
-
-                } 
-            }
-        }
         //-------Listen key----
         public static void ListenKey(bool isTrue)
         {
@@ -150,6 +133,10 @@ namespace DoAn_NMLT_20880106
             if (evenSpace)
             {
                 skipBird = 0;
+            }
+            if (skipBird == 29)
+            {
+                skipBird = 5;
             }
             skipBird++;
            

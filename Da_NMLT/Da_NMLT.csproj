@@ -42,29 +42,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About.cs" />
-    <Compile Include="Add.cs" />
-    <Compile Include="AddLH.cs" />
-    <Compile Include="Caculator.cs" />
-    <Compile Include="Delete.cs" />
-    <Compile Include="DeleteLH.cs" />
-    <Compile Include="Edit.cs" />
-    <Compile Include="EditLH.cs" />
-    <Compile Include="FappyBird.cs" />
-    <Compile Include="FappyBirdBird.cs" />
-    <Compile Include="FappyBirdChimneys.cs" />
-    <Compile Include="Find.cs" />
-    <Compile Include="FindLH.cs" />
-    <Compile Include="Form.cs" />
-    <Compile Include="MiniGame.cs" />
-    <Compile Include="MiniGameOver.cs" />
+    <Compile Include="Common\About.cs" />
+    <Compile Include="Add\Add.cs" />
+    <Compile Include="FappyBird\FloorCeiling.cs" />
+    <Compile Include="LoaiHang\AddLH.cs" />
+    <Compile Include="Common\Caculator.cs" />
+    <Compile Include="Add\Delete.cs" />
+    <Compile Include="LoaiHang\DeleteLH.cs" />
+    <Compile Include="Add\Edit.cs" />
+    <Compile Include="LoaiHang\EditLH.cs" />
+    <Compile Include="FappyBird\FappyBird.cs" />
+    <Compile Include="FappyBird\FappyBirdBird.cs" />
+    <Compile Include="FappyBird\FappyBirdChimneys.cs" />
+    <Compile Include="FappyBird\FappyBirdTrees.cs" />
+    <Compile Include="Add\Find.cs" />
+    <Compile Include="LoaiHang\FindLH.cs" />
+    <Compile Include="Common\Form.cs" />
+    <Compile Include="SnakeGame\MiniGame.cs" />
+    <Compile Include="SnakeGame\MiniGameOver.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Select.cs" />
-    <Compile Include="Show.cs" />
-    <Compile Include="Store.cs" />
-    <Compile Include="Struct.cs" />
-    <Compile Include="Tittle.cs" />
+    <Compile Include="Common\Select.cs" />
+    <Compile Include="Common\Show.cs" />
+    <Compile Include="Common\Store.cs" />
+    <Compile Include="Common\Struct.cs" />
+    <Compile Include="Common\Tittle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

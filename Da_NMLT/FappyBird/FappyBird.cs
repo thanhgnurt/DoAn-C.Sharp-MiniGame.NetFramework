@@ -30,20 +30,21 @@ namespace DoAn_NMLT_20880106
             pointBir = FappyBirdBird.pointBird();
             Console.BackgroundColor = ConsoleColor.Blue;
             FloorCeilingFB();
+            PrintScore();
             Thread t1 = new Thread(FappyBirdChimneys.FappyBrid);
             Thread t2 = new Thread(()=>FappyBirdBird.ListenKey(true));
-           // Thread t3 = new Thread(FappyBirdBird.MoveDownBird);
+            FloorCeiling.MoveFloor(3);
+            FloorCeiling.MoveCeiling(3);
             t1.Start(); 
             t2.Start();
             Console.SetCursorPosition(0, 0);
             Console.BackgroundColor = ConsoleColor.Red;
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(" Fly Up [SPACEBAR] ");
-            // t3.Start();
             t1.Join();
             t2.Join();
-           // t3.Join();
 
+            
             
         }
 
@@ -77,8 +78,8 @@ namespace DoAn_NMLT_20880106
         //--- print---
         public static void PrintScore()
         {
-            Console.SetCursorPosition(55, 28);
-            Console.BackgroundColor = ConsoleColor.Red;
+            Console.SetCursorPosition(55, 0);
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write(" SCORE : "+ score+" ");
             Console.BackgroundColor = ConsoleColor.White;

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Da_NMLT", "Da_NMLT\Da_NMLT.csproj", "{5CA48456-1736-4EF6-ABC1-2A1347B93F00}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "FileSetup\Setup1\Setup1.vdproj", "{A3DF6C00-112E-46D1-97EB-B916EB139D51}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "FatBird", "FileSetup\FatBird\FatBird.vdproj", "{91648A5F-7D1D-4099-9B08-1B91D3204465}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{5CA48456-1736-4EF6-ABC1-2A1347B93F00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CA48456-1736-4EF6-ABC1-2A1347B93F00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CA48456-1736-4EF6-ABC1-2A1347B93F00}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3DF6C00-112E-46D1-97EB-B916EB139D51}.Debug|Any CPU.ActiveCfg = Debug
-		{A3DF6C00-112E-46D1-97EB-B916EB139D51}.Release|Any CPU.ActiveCfg = Release
+		{91648A5F-7D1D-4099-9B08-1B91D3204465}.Debug|Any CPU.ActiveCfg = Debug
+		{91648A5F-7D1D-4099-9B08-1B91D3204465}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

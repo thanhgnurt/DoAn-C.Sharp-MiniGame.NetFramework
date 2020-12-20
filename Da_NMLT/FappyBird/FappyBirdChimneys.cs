@@ -21,6 +21,7 @@ namespace DoAn_NMLT_20880106
             List<POINT> PointChimneyRightXY3 = new List<POINT>();
             List<POINT> PointChimneyLeftXY4 = new List<POINT>();
             List<POINT> PointChimneyRightXY4 = new List<POINT>();
+            int widthChimneys = 8;
             int c1;
             int c2=150;
             int c3 = 180;
@@ -31,7 +32,7 @@ namespace DoAn_NMLT_20880106
             int spaceC4 = 6;
             int hChimney1 = 10;
             int hChimney2 = 10;
-            int hChimney3 =10;
+            int hChimney3 = 20;
             int hChimney4 = 10;
             bool first = true;
             int rangeC1 = 35;
@@ -40,14 +41,22 @@ namespace DoAn_NMLT_20880106
             //int rangeC4 = 30;
             string direction;
             int skip = 1;
-
+            int treeC3 = 100;
+            int treeC31 = 100;
+            int randomH2 = 100;
+            int floorMove = 3;
+            Random randomObj = new Random();
 
             // int hight = hightBird;
             POINT[] bird = new POINT[2];
-            for (int i = 120; i>=-9; i--)
+            for (int i = 120; i>=-widthChimneys-1; i--)
             {
                 // speed game
                 Thread.Sleep(speedGame);
+
+
+
+
                 //index first----
                 c1 = i;
                 if (first)
@@ -61,7 +70,7 @@ namespace DoAn_NMLT_20880106
                 //
                 if (c1 >= (120-rangeC1)&& !first )
                 {
-                    c2 = rangeC1 -9 - 120 + c1;
+                    c2 = rangeC1 -widthChimneys-1 - 120 + c1;
                     c3 = c2 + rangeC2 + 1;
                     c4 = c3 + rangeC3 + 1;
 
@@ -76,7 +85,7 @@ namespace DoAn_NMLT_20880106
 
                 if(c2 >= (120-rangeC2)&& !first)
                 {
-                    c3 = rangeC2 - 9 - 120 + c2 ;
+                    c3 = rangeC2 - widthChimneys-1 - 120 + c2 ;
                     c4 = c3 + rangeC3;
                 }
                 if (c2 < (120 - rangeC2) && !first)
@@ -87,7 +96,7 @@ namespace DoAn_NMLT_20880106
 
                 if (c3 >= (120 - rangeC3) && !first)
                 {
-                    c4 = rangeC3 - 9 - 120 + c3;
+                    c4 = rangeC3 - widthChimneys-1 - 120 + c3;
                 }
 
                 if (c3 < (120 - rangeC3) && !first)
@@ -102,7 +111,6 @@ namespace DoAn_NMLT_20880106
                 //reandom h and space
                 if (c1 == 120 )
                 {
-                    Random randomObj = new Random();
                     hChimney1 = randomObj.Next(4, 17);
                     if (score >= 10)
                     {
@@ -115,7 +123,6 @@ namespace DoAn_NMLT_20880106
                 }
                 if (c2 == 120 )
                 {
-                    Random randomObj = new Random();
                     hChimney2 = randomObj.Next(4, 17);
                     if (score >= 15)
                     {
@@ -129,8 +136,8 @@ namespace DoAn_NMLT_20880106
                 }
                 if (c3 ==120 )
                 {
-                    Random randomObj = new Random();
-                    hChimney3 = randomObj.Next(4, 17);
+
+                    hChimney3 = randomObj.Next(4, 42);
                     if (score >= 10)
                     {
                         spaceC3 = randomObj.Next(5, 6);
@@ -143,7 +150,6 @@ namespace DoAn_NMLT_20880106
                 }
                 if (c4 == 120 )
                 {
-                    Random randomObj = new Random();
                     hChimney4 = randomObj.Next(4, 17);
 
                     if (score >= 5)
@@ -157,22 +163,57 @@ namespace DoAn_NMLT_20880106
                     }
                 }
 
+                // trees start
+                if (first)
+                {
+
+                    FappyBirdTrees.WriteTreesStart(i);
+                }
+                if ((treeC3 ==-9 )|| (treeC31 < -8 && treeC31>-38))
+                {
+                    
+                    if (treeC3 == -9)
+                    {
+                        randomH2 = hChimney3;
+                        treeC31 = -9;
+                        treeC3 = -10;
+                    }
+                    FappyBirdTrees.WriteTrees(treeC31, randomH2);
+                    treeC31--; 
+                }
+                //--the chimneys
                 PointChimneyLeftXY1 = CreatePointChimneyLeft(hChimney1, spaceC1, c1);
-                PointChimneyRightXY1 = CreatePointChimneyRight(hChimney1, spaceC1, c1 + 8);
-                PointChimneyLeftXY2 = CreatePointChimneyLeft(hChimney2, spaceC2, c2);
-                PointChimneyRightXY2 = CreatePointChimneyRight(hChimney2, spaceC2, c2 + 8);
-                PointChimneyLeftXY3 = CreatePointChimneyLeft(hChimney3, spaceC3, c3);
-                PointChimneyRightXY3 = CreatePointChimneyRight(hChimney3, spaceC3 , c3+ 8);
-                PointChimneyLeftXY4 = CreatePointChimneyLeft(hChimney4, spaceC4, c4);
-                PointChimneyRightXY4 = CreatePointChimneyRight(hChimney4, spaceC4, c4 + 8);
+                PointChimneyRightXY1 = CreatePointChimneyRight(hChimney1, spaceC1, c1 + widthChimneys);
                 WriteChimneyRight(PointChimneyRightXY1);
                 WriteChimneyLeft(PointChimneyLeftXY1);
+                PointChimneyLeftXY2 = CreatePointChimneyLeft(hChimney2, spaceC2, c2);
+                PointChimneyRightXY2 = CreatePointChimneyRight(hChimney2, spaceC2, c2 + widthChimneys);
                 WriteChimneyRight(PointChimneyRightXY2);
                 WriteChimneyLeft(PointChimneyLeftXY2);
-                WriteChimneyRight(PointChimneyRightXY3);
-                WriteChimneyLeft(PointChimneyLeftXY3);
+                if (hChimney3<17)
+                {
+                    PointChimneyLeftXY3 = CreatePointChimneyLeft(hChimney3, spaceC3, c3);
+                    PointChimneyRightXY3 = CreatePointChimneyRight(hChimney3, spaceC3 , c3+ widthChimneys);
+                    WriteChimneyRight(PointChimneyRightXY3);
+                    WriteChimneyLeft(PointChimneyLeftXY3);
+                }
+                else
+                {
+                    treeC3 = c3;
+                    FappyBirdTrees.WriteTrees(treeC3, hChimney3);
+
+                }
+
+
+                PointChimneyLeftXY4 = CreatePointChimneyLeft(hChimney4, spaceC4, c4);
+                PointChimneyRightXY4 = CreatePointChimneyRight(hChimney4, spaceC4, c4 + widthChimneys);
                 WriteChimneyRight(PointChimneyRightXY4);
                 WriteChimneyLeft(PointChimneyLeftXY4);
+                //--move floor and ceiling
+                FloorCeiling.MoveCeiling(floorMove);
+                FloorCeiling.MoveFloor(floorMove);
+                
+
                 if (c1 > 24 && c1 < 32)
                 {
 
@@ -181,7 +222,7 @@ namespace DoAn_NMLT_20880106
                         if (hightBird == PointChimneyLeftXY1[k].Y)
                         {
                             //===end game
-                            i = -10;
+                            i = -widthChimneys -2;
                            
                         }
                     }
@@ -194,19 +235,19 @@ namespace DoAn_NMLT_20880106
                         if (hightBird == PointChimneyLeftXY2[k].Y)
                         {
                             //===end game- dk thoat vong lap <-9
-                          i = -10;
+                            i = -widthChimneys-2;
                         }
                     }
                    
                 }
-                if (c3 > 24 && c3 < 32)
+                if (c3 > 24 && c3 < 32 && hChimney3<18)
                 {
                     for (int k = 0; k < PointChimneyLeftXY3.Count; k++)
                     {
                         if (hightBird == PointChimneyLeftXY3[k].Y)
                         {
                             //===end game
-                           i = -10;
+                           i = -widthChimneys-2;
                         }
                     }
 
@@ -218,7 +259,7 @@ namespace DoAn_NMLT_20880106
                         if (hightBird == PointChimneyLeftXY4[k].Y)
                         {
                             //===end game
-                           i = -10;
+                           i = -widthChimneys-2;
                         }
                     }
                    
@@ -227,11 +268,11 @@ namespace DoAn_NMLT_20880106
                 if (c4 == 22 || c3 ==22 || c2 == 22 || c1 == 22)
                 {
                     score++;
-                    if (speedGame == 20)
+                    if (speedGame > 20)
                     {
-                        speedGame = speedGame - 10 ;
+                        speedGame = speedGame - 5 ;
                     }
-                    if (score%10 == 2)
+                    if (score%20 == 4)
                     {
                         speedGame = 80;
                     }
@@ -240,7 +281,7 @@ namespace DoAn_NMLT_20880106
                 if (hightBird < 2 || hightBird >= 26)
                 {
                     //end game
-                    i = -10;
+                     i = -widthChimneys-2;
                 }
                 pointBir[0].Y = hightBird;
                 pointBir[1].Y = hightBird;
@@ -274,7 +315,7 @@ namespace DoAn_NMLT_20880106
                 }
                 if (skip == 5 && speedGame<=40)
                 {
-                    hightBird++;
+                   hightBird++;
                 }
                 pointBir[0].Y = hightBird;
                 pointBir[1].Y = hightBird;
@@ -292,7 +333,14 @@ namespace DoAn_NMLT_20880106
                 {
                     skip = 0;
                 }
+                if (floorMove == 0)
+                {
+                    floorMove = 4;
+                }
                 skip++;
+                floorMove--;
+
+               
 
             }
             GameOverFB();
