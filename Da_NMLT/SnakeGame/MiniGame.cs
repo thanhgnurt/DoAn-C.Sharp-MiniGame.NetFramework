@@ -264,7 +264,7 @@ namespace DoAn_NMLT_20880106
             Struct.DIEM Diem6;
             Diem6.x = 65;
             Diem6.y = 18;
-            Struct.DIEM Diem7;
+            Struct.DIEM Diem7; 
             Diem7.x = 65;
             Diem7.y = 19;
             Struct.DIEM Diem8;
@@ -281,7 +281,6 @@ namespace DoAn_NMLT_20880106
 
             for (int i =0; i< Snake.Count; i++)
             {
-
                 FragmentSnake(Snake[i]);
             }
             

@@ -335,7 +335,7 @@ namespace DoAn_NMLT_20880106
                 }
                 if (floorMove == 0)
                 {
-                    floorMove = 4;
+                    floorMove = 9;
                 }
                 skip++;
                 floorMove--;

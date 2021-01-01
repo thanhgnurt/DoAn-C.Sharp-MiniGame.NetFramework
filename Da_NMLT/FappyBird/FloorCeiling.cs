@@ -17,24 +17,25 @@ namespace DoAn_NMLT_20880106
             for (int i = 119; i>=0; i--)
             {
               
-                Console.ForegroundColor = ConsoleColor.Gray;
-                Console.BackgroundColor = ConsoleColor.DarkGray;
-                if(i % 4 == xMove1 || i%4== xMove2)
+               
+                Console.BackgroundColor = ConsoleColor.Gray;
+                if(i % 8 == xMove1 || i%8== xMove2)
                 {
                     
                     Console.SetCursorPosition(i, 27);
-                    Console.Write("=");
+                    Console.Write(" ");
                     Console.SetCursorPosition(i, 28);
                     Console.Write(" ");
                     Console.SetCursorPosition(i, 0);
                   
                 }
                
-                if (i % 4 == shadow1|| i%4 ==shadow2)
+                if (i % 8 == shadow1|| i%8 ==shadow2)
                 {
+                    Console.ForegroundColor = ConsoleColor.White;
                     Console.BackgroundColor = ConsoleColor.Blue;
                     Console.SetCursorPosition(i, 27);
-                    Console.Write(" ");
+                    Console.Write("=");
                     Console.SetCursorPosition(i, 28);
                     Console.Write(" ");
                     Console.SetCursorPosition(i, 0);
@@ -49,7 +50,7 @@ namespace DoAn_NMLT_20880106
         {
             if (index == 0)
             {
-                return 3;
+                return 7;
             }
             return index - 1;
         }
@@ -59,16 +60,16 @@ namespace DoAn_NMLT_20880106
         {
             for(int i = 119; i>=0; i--)
             {
-                if (i % 4 == xMove)
+                if (i % 8 == xMove)
                 {
                     Console.BackgroundColor = ConsoleColor.Blue;
                     Console.SetCursorPosition(i, 1);
                     Console.Write(" ");
 
                 }
-                if (i%4 == DeductionIndex(xMove))
+                if (i%8 == DeductionIndex(xMove))
                 {
-                    Console.BackgroundColor = ConsoleColor.Gray;
+                    Console.BackgroundColor = ConsoleColor.Yellow;
                     Console.SetCursorPosition(i, 1);
                     Console.Write(" ");
                 }
@@ -76,7 +77,11 @@ namespace DoAn_NMLT_20880106
         }
         
         //---the sun---
-      
+        public static void Author()
+        {
+            Console.SetCursorPosition(102, 0);
+            Console.Write(" ---thanhgnurt--- ");
+        }
 
 
         //end

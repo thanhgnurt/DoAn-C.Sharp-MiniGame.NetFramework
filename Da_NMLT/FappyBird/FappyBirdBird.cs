@@ -110,7 +110,7 @@ namespace DoAn_NMLT_20880106
                 Console.Write(@",,,");
                 Console.SetCursorPosition(pBird[0].X - 4, pBird[0].Y+1);
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.Write(@"///");
+                Console.Write(@"///"); 
 
 
             }
@@ -121,7 +121,7 @@ namespace DoAn_NMLT_20880106
                 Console.SetCursorPosition(pBird[0].X - 5, pBird[1].Y);
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.BackgroundColor = ConsoleColor.White;
-                Console.Write("_   _");
+                Console.Write("_  _");
                 Console.SetCursorPosition(pBird[0].X - 4, pBird[1].Y);
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.BackgroundColor = ConsoleColor.White;

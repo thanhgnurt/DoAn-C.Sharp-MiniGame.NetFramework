@@ -31,6 +31,7 @@ namespace DoAn_NMLT_20880106
             Console.BackgroundColor = ConsoleColor.Blue;
             FloorCeilingFB();
             PrintScore();
+            FloorCeiling.Author();
             Thread t1 = new Thread(FappyBirdChimneys.FappyBrid);
             Thread t2 = new Thread(()=>FappyBirdBird.ListenKey(true));
             FloorCeiling.MoveFloor(3);

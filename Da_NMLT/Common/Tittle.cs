@@ -16,7 +16,7 @@ namespace DoAn_NMLT_20880106
             Console.ForegroundColor = ConsoleColor.DarkBlue;
            // Console.WriteLine("                            |");
             Console.WriteLine(" Lê Thành Trung             |");
-            Console.WriteLine(" 20880106                   |");
+            Console.WriteLine(" MSSV: 20880106             |");
             Console.WriteLine("____________________________|");
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.DarkYellow;
